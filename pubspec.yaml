@@ -1,0 +1,36 @@
+name: gsct_decoder
+description: Decoder for HarmonyOS 3D photo (Remy) gsct streams — converts the UWA-compressed 3DGS payload embedded in the MP4 container into a standard 3DGS PLY loadable by gsplat.js.
+version: 0.1.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  ffi: ^2.1.0
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+
+repository: https://github.com/tech-ming/gsct_decoder
+
+issue_tracker: https://github.com/tech-ming/gsct_decoder/issues
+
+topics:
+  - harmonyos
+  - ohos
+  - three-d
+  - model3d
+  - gaussian-splatting
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        ffiPlugin: true
+      ios:
+        ffiPlugin: true
+      ohos:
+        ffiPlugin: true

@@ -1,0 +1,2 @@
+# 静态分析配置：启用 Flutter 官方推荐规则集
+include: package:flutter_lints/flutter_lints.yaml

@@ -1,0 +1,20 @@
+{
+  "apiType": "stageMode",
+  "buildOption": {
+    // 注意：hvigor 仅在**模块源码集内**存在 C/C++ 文件时才执行 externalNativeOptions
+    // 的 cmake 任务（CmakeUtil.nativeTaskCondition），而本插件的源码与 Android / iOS /
+    // 桌面共用、放在模块外的 src/，模块内没有 .cpp —— 因此这里配置的 cmake 目前不会
+    // 被执行。OHOS 平台实际走「预编译库」：ohos/libs/<abi>/libgsct_decoder.so，
+    // 由 hvigor 的 ProcessLibs 任务随 har 打包。重新编译见 ohos/build_libs.sh。
+    "externalNativeOptions": {
+      "path": "../src/CMakeLists.txt",
+      "arguments": "-DOHOS_STL=c++_static",
+      "cppFlags": ""
+    }
+  },
+  "targets": [
+    {
+      "name": "default"
+    }
+  ]
+}

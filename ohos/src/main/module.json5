@@ -1,0 +1,10 @@
+{
+  "module": {
+    "name": "gsct_decoder",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet"
+    ]
+  }
+}

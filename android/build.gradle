@@ -1,0 +1,48 @@
+// gsct_decoder 的 Android 构建配置。
+// 原生代码由 Android Gradle Plugin 通过 NDK 调用 src/CMakeLists.txt 编译。
+
+group = "io.github.techming.gsct_decoder"
+version = "0.1.0"
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.7.0")
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: "com.android.library"
+
+android {
+    namespace = "io.github.techming.gsct_decoder"
+
+    // 与宿主工程保持一致（compileSdk 36 / NDK 27）
+    compileSdk = 36
+    ndkVersion = android.ndkVersion
+
+    externalNativeBuild {
+        cmake {
+            path = "../src/CMakeLists.txt"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    defaultConfig {
+        minSdk = 24
+    }
+}

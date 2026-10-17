@@ -1,0 +1,21 @@
+# 桌面验证构建产物
+build/
+
+# Flutter/Dart
+.dart_tool/
+.packages
+pubspec.lock
+
+# 平台构建产物
+android/.gradle/
+android/build/
+android/.cxx/
+ohos/build/
+ohos/oh_modules/
+ohos/.hvigor/
+ios/Pods/
+ios/.symlinks/
+
+# IDE
+.idea/
+*.iml
